@@ -33,12 +33,6 @@ class GitZip:
                 del URLPath[5]
         self.url = f"{URL.scheme}://{URL.netloc}{'/'.join(URLPath)}.zip/"
         print(f"Converted {self.OGurl} to {self.url}")
-
-    #My first attempt at making a context manager
-    def __enter__(self):
-        return self
-    def __exit__(self):
-        return
     
     def GetZipfile(self): #url is that repo's homepage
         self.GetRepo = requests.get(self.url)
